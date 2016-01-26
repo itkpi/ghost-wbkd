@@ -7,11 +7,11 @@
 {{#post}}
 <link rel="stylesheet" href="/assets/css/prism.css">
 <script src="/assets/js/prism.js"></script>
-
+<div class="mdl-layout mdl-js-layout">
 {{> "header"}}
 
 
-<main id="content" class="content" role="main">
+<main id="content" class="content mdl-layout__content" role="main">
 
     <div id="article" class="box {{#if image}}has-image{{/if}}">
         {{#if image}}
@@ -107,5 +107,6 @@
 <div id="sidebar">{{> "sidebar"}}</div>
 
 </main>
+</div>
 
 {{/post}}
