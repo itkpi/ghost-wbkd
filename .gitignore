@@ -17,5 +17,5 @@ node_modules
 .idea/*
 *.iml
 projectFilesBackup
-
+*,sh
 .DS_Store
