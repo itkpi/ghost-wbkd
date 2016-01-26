@@ -1,0 +1,101 @@
+body .card {
+    font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+.card .mdl-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 360px;
+}
+.card .mdl-card__title {
+    padding: 16px;
+    flex-grow: 1;
+}
+.card .mdl-card__media {
+    background-image: url('http://www.getmdl.io/assets/demos/welcome_card.jpg') box-sizing: border-box;
+    background-size: cover;
+    padding: 24px;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    align-items: flex-end;
+    cursor: pointer;
+}
+.card .mdl-card__media a,
+.card .mdl-card__title a {
+    color: inherit;
+}
+.card .mdl-card__supporting-text {
+    width: 100%;
+    padding: 16px;
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+}
+.card .mdl-card__supporting-text strong {
+    font-weight: 400;
+}
+.card .mdl-card__media ~ .mdl-card__supporting-text {
+    min-height: 64px;
+}
+.card .mdl-card__supporting-text:not(:last-child) {
+    box-sizing: border-box;
+    min-height: 76px;
+}
+.card:not(.card--blogpost) .mdl-card__supporting-text ~ .mdl-card__supporting-text {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.card .meta {
+    box-sizing: border-box;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto;
+}
+.card .meta > .meta__favorites {
+    flex-direction: row;
+    margin: 0 8px;
+    font-size: 13px;
+    font-weight: 500;
+}
+.card .meta > .meta__favorites .material-icons {
+    font-size: 2em;
+    cursor: pointer;
+    margin-left: 12px;
+}
+
+.card .mdl-card .meta.meta--fill {
+    justify-content: space-between;
+}
+
+.card .meta > *:first-child {
+    margin-right: 16px;
+}
+
+.card .meta > * {
+    display: flex;
+    flex-direction: column;
+}
+
+.card .mdl-card__media {
+    background-color: #424242;
+}
+
+.card .mdl-card h3 {
+    margin: 0;
+}
+
+.card .mdl-card h3 a {
+    text-decoration: none;
+}
+
+.card img {
+    width: 44px;
+    height: 44px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 22px;
+    background-color: #000000;
+}

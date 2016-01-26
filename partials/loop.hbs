@@ -3,21 +3,25 @@
 {{#foreach posts}}
 
 <a class="article-link" href="{{url}}">
-    <article class="box is-link {{post_class}}">
-        {{#if image}}
-            <section class="post-image" style="background-image:url({{image}})"></section>
-        {{/if}}
-        <header class="post-header">
-            <h2 class="post-title">{{{title}}}</h2>
-        </header>
-        <section class="post-excerpt">
-            <p>{{excerpt words="26"}}...</p>
-        </section>
-        
-        <footer class="post-meta">
-            <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-        </footer>
-    </article>
+    <div class="card">
+        <div class="mdl-card on-the-road-again mdl-shadow--2dp">
+            <div class="mdl-card__media mdl-color-text--grey-50"
+                 style="background-image: url({{image}})">
+                <h3>{{{title}}}</h3>
+            </div>
+            <div class="mdl-color-text--grey-600 mdl-card__supporting-text">{{excerpt words="26"}}...</div>
+            {{! Everything inside the #author tags pulls data from the author }}
+                {{#author}}
+                <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+                    <img src="{{image}}"/>
+                    <div>
+                        <strong>{{name}}</strong>
+                {{/author}}
+                        <span>{{date format="DD MMMM YYYY"}}</span>
+                    </div>
+                </div>
+        </div>
+    </div>
 </a>
 {{/foreach}}
 
