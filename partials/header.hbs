@@ -1,17 +1,30 @@
 {{! The big featured header }}
-<header id="header">
-    <!-- <nav class="header-nav" {{#if @blog.cover}}style="background-image:url({{@blog.cover}}){{/if}}"> -->
 
-      <div class="blog-title"><a href="/">{{@blog.title}}</a></div>
-
-      <!--Change this to customize the navigation-->
-      <div class="taglist-wrapper clearfix">
-        <center>
-          <ul id="taglist" class="taglist">
-              <li><a href="http://blog.itkpi.pp.ua/about/">Про нас</a></li>
-          </ul>
-        </center>
-      </div>
-    </nav>
-    <a href="javascript:invert()" class="invertSwitch"><i class="fa fa-eye"></i> day/night</a>
-</header>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header" id="header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title"><a href="/">{{@blog.title}}</a></span>
+      <div class="mdl-layout-spacer"></div>
+      <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
+        <input type="checkbox" id="switch-2" class="mdl-switch__input">
+        <span class="mdl-switch__label">Night mode</span>
+      </label>
+    </div>
+    <!-- Tabs -->
+    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+      <a href="http://blog.itkpi.pp.ua/about/" class="mdl-layout__tab">Про нас</a>
+      <a href="http://blog.itkpi.pp.ua/tag/edu/" class="mdl-layout__tab">Education</a>
+      <a href="http://blog.itkpi.pp.ua/tag/js/" class="mdl-layout__tab">JavaScript</a>
+      <a href="http://blog.itkpi.pp.ua/tag/csharp/" class="mdl-layout__tab"> C# </a>
+      <a href="http://blog.itkpi.pp.ua/tag/swift/" class="mdl-layout__tab">Swift</a>
+      <a href="http://blog.itkpi.pp.ua/tag/fun/" class="mdl-layout__tab">Fun</a>
+    </div>
+  </header>
+  
+  <script type="text/javascript">
+    document.getElementById('switch-2').onclick = function() {
+      invert();
+    };
+  </script>
+</div>
