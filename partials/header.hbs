@@ -1,15 +1,17 @@
 {{! The big featured header }}
 
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
   <header class="mdl-layout__header" id="header">
     <div class="mdl-layout__header-row">
       <!-- Title -->
-      <span class="mdl-layout-title"><a href="/">{{@blog.title}}</a></span>
+      <span class="mdl-layout-title">{{@blog.title}}</span>
       <div class="mdl-layout-spacer"></div>
+      <nav class="mdl-navigation">
       <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
         <input type="checkbox" id="switch-2" class="mdl-switch__input">
         <span class="mdl-switch__label">Night mode</span>
       </label>
+      </nav>
     </div>
     <!-- Tabs -->
     <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
@@ -27,4 +29,3 @@
       invert();
     };
   </script>
-</div>
