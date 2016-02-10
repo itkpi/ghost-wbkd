@@ -50,11 +50,11 @@
                 <!--<span class="author">by {{author}}</span>-->
 
             
-            {{#if place}}<span class="author-location icon-location"><b>Місце:</b> <a href ="https://www.google.com/maps?q={{place}}" onclick="ga('send', 'event', 'events', 'maps_location', '{{title}}');">{{place}}</a></span>{{/if}}<br/>
+            {{#if place}}<span class="author-location icon-location"><b>Місце:</b> <a href ="https://www.google.com/maps?q={{place}}" onclick="ga('send', 'event', 'events', 'maps_location', '{{id}}. {{title}}');">{{place}}</a></span>{{/if}}<br/>
             {{#if level}}<b>Складність:</b> {{level}}{{/if}}<br/>
             <br/>
 <!-- Можна причепити рахувальник кількості переходів -->
-             {{#if registration_url}}<p><input class="author-link icon-link" style="width:200px;height:50px;font-weight:bold" value="Реєстрація" type="button" onclick="ga('send', 'event', 'events', 'register_click', '{{title}}'); window.open('{{registration_url}}'); return false;" /></p>{{/if}}
+             {{#if registration_url}}<p><input class="author-link icon-link" style="width:200px;height:50px;font-weight:bold" value="Реєстрація" type="button" onclick="ga('send', 'event', 'events', 'register_click', '{{id}}. {{title}}'); window.open('{{registration_url}}'); return false;" /></p>{{/if}}
         </section>
 
 
