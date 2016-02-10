@@ -3,7 +3,7 @@ function setColorsFilter() {
   if (invertedPercent === undefined) {
     invertedPercent = "0%";
   }
-  ["body", "img", ".ads", ".post-image"].forEach(function(sel) {
+  ["body", "img", ".partner", ".post-image"].forEach(function(sel) {
     $(sel).css("filter", "invert(" + invertedPercent + ")");
     $(sel).css("-webkit-filter", "invert(" + invertedPercent + ")");
     $(sel).css("-moz-filter", "invert(" + invertedPercent + ")");
@@ -51,7 +51,7 @@ $(function() {
   }
 
   setTimeout(function(){
-      if (!$(".ads").is(":visible")) {
+      if (!$(".partner").is(":visible")) {
           $(".arrrgh").css("display", "block");
       }
   }, 1000);
