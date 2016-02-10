@@ -423,11 +423,11 @@ a.article-link:visited {
   cursor: pointer;
 }
 
-.ads-wrapper {
+.partner-wrapper {
   padding: 0 10px;
 }
 
-.ads {
+.partner {
   background-size: cover;
   background-color: #d6edff;
   background-repeat:   no-repeat;
