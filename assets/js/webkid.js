@@ -50,6 +50,12 @@ $(function() {
     $parent.removeClass('loading');
   }
 
+  setTimeout(function(){
+      if (!$(".ads").is(":visible")) {
+          $(".arrrgh").css("display", "block");
+      }
+  }, 1000);
+
   $.ajax({
     dataType: 'xml',
     url: '/rss',
