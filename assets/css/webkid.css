@@ -435,3 +435,15 @@ a.article-link:visited {
   margin: auto;
   width: 100%;
 }
+
+A.event-register {
+  text-decoration: none;
+  opacity: 10;
+  padding: 0.8em;
+  font-weight: 600;
+  text-decoration: none;
+  border: 4px solid #00a88e;
+  background-color: white;  
+  color: black;
+  font-weight: bold;
+}
