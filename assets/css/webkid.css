@@ -433,4 +433,5 @@ a.article-link:visited {
   background-repeat:   no-repeat;
   background-position: center center;
   margin: auto;
+  width: 100%;
 }
