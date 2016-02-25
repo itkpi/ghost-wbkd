@@ -180,7 +180,7 @@ body * {
 
 #sidebar, #sidebar-events {
   width: 30%;
-  float: left;
+  float: right;
 }
 
 #sidebar button, #sidebar-events button {
