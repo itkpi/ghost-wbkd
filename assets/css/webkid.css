@@ -400,7 +400,7 @@ a.article-link:visited {
 
 /*Tablet*/
 @media (max-width: 1023px) {
-  #sidebar, #articles, #article {
+  #sidebar, #sidebar-events, #articles, #article {
     width: 100%;
   }
 }
