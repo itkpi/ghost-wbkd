@@ -1,0 +1,158 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+
+
+<!-- <link rel="stylesheet" href="{{asset "libs/flakes/css/all.css" }}"> -->
+<link rel="stylesheet" href="{{asset "libs/font-awesome/css/font-awesome.min.css" }}">
+<link rel="stylesheet" href="{{asset "libs/gridforms/gridforms/gridforms.css" }}">
+
+<script src="{{asset "libs/jquery/dist/jquery.min.js" }}"></script>
+<script src="{{asset "libs/snapjs/snap.min.js" }}"></script>
+<script src="{{asset "libs/responsive-elements/responsive-elements.js" }}"></script>
+<script src="{{asset "libs/gridforms/gridforms/gridforms.js" }}"></script>
+
+
+<script type="text/javascript">jQuery_1 = jQuery;</script>
+<script src="{{asset "libs/jquery/dist/jquery.min.js" }}"></script>
+<script type="text/javascript">jQuery_2 = $.noConflict(true);</script>
+<script type="text/javascript">jQuery = jQuery_1;</script>
+
+<link rel="stylesheet" href="/assets/css/prism.css">
+<script src="/assets/js/prism.js"></script>
+
+<link rel="stylesheet" href="{{asset "libs/redactor/redactor/redactor.css" }}" />
+<script src="{{asset "libs/redactor/redactor/redactor.min.js" }}"></script>
+<link rel="stylesheet" href="{{asset "libs/jquery-ui/themes/ui-lightness/jquery-ui.min.css" }}" />
+
+<script type="text/javascript">jQuery = jQuery_2;</script>
+<link rel="stylesheet" href="{{asset "libs/datetimepicker/jquery.datetimepicker.css" }}">
+<script src="{{asset "libs/datetimepicker/build/jquery.datetimepicker.full.min.js" }}"></script>
+<script type="text/javascript">jQuery = jQuery_1;</script>
+
+<script src="{{asset "libs/jquery-ui/jquery-ui.min.js" }}"></script>
+
+{{> "header"}}
+
+
+<main id="content" class="content clearfix" role="main">
+
+    <div id="articles">
+        <form class="grid-form" method="POST">
+            <div class="grid-10 gutter-20">
+                <div class="span-6">
+                    <fieldset>
+                        <legend>General</legend>
+                        <div data-row-span="1">
+                            <div data-field-span="1">
+                                <label>Title</label>
+                                <input type="text" name="title" value="{{title}}">
+                            </div>
+                        </div>
+
+                        <div data-row-span="1">
+                            <div data-field-span="1">
+                                <label>Agenda</label>
+                                <textarea rows="15" name="agenda" id="agendaEditor">{{#if agenda }}{{agenda}}{{/if}}</textarea>
+                            </div>
+                        </div>
+                        <div data-row-span="1">
+                            <div data-field-span="1">
+                                <label>Social</label>
+                                <textarea rows="5" name="social" id="socialEditor">{{#if social }}{{social}}{{/if}}</textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="span-4">
+                    <fieldset>
+                        <legend>Details</legend>
+                        <div data-row-span="1">
+                            <div data-field-span="1">
+                                <label>Place</label>
+                                <input type="text" name="place" value="{{place}}">
+                            </div>
+                        </div>
+
+                        <div data-row-span="2">
+                            <div data-field-span="1">
+                                <label>Starts at</label>
+                                <input type="text" class="datepicker" name="when_start" value="{{# if when_start }}{{# unless only_date }}{{ when_start }}{{ else }}{{ when_start }}{{/unless}}{{/if}}">
+                            </div>
+                            <div data-field-span="1">
+                                <label>Ends at</label>
+                                <input type="text" class="datepicker" name="when_end" value="{{# if when_end }}{{# unless only_date }}{{ when_end }}{{ else }}{{ when_end }}{{/unless}}{{/if}}">
+                            </div>
+                        </div>
+                        <div data-row-span="2">
+                            <div data-field-span="1">
+                                <label>Print time<br />(only date will be printed if not checked)</label>
+                                <input type="checkbox" name="include_time" value="true" {{# unless only_date }}checked{{/unless}}>
+                            </div>
+                            <div data-field-span="1">
+                                <label>Special</label>
+                                <input type="checkbox" name="special" {{# if special }}checked{{/if}}>
+                            </div>
+                        </div>
+
+                        <div data-row-span="1">
+                            <div data-field-span="1">
+                                <label>Level</label>
+                                <select name="level" value="{{level}}">
+                                    <option value="NONE" disabled>- choose one -</option>
+                                    <option value="TRAINEE">trainee</option>
+                                    <option value="JUNIOR">junior</option>
+                                    <option value="MIDDLE">middle</option>
+                                    <option value="SENIOR">senior</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div data-row-span="1">
+                            <div data-field-span="1">
+                                <label>Registration link</label>
+                                <input type="text" name="registration_url" value="{{registration_url}}">
+                            </div>
+                        </div>
+
+                        <div data-row-span="1">
+                            <div data-field-span="1">
+                                <label>Image URL</label>
+                                <input type="text" name="image_url" value="{{image_url}}">
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <br>
+            {{# if edit }}
+            <button type="submit" class="button-green bigger" name="submit" value="Edit">Save</button>
+            <button type="submit" class="button-green bigger" name="submit" value="Edit_add_more">Save and add one more</button>
+            {{ else }}
+            <button type="submit" class="button-green bigger" name="submit" value="save_details">Save and preview</button>
+            {{/if}}
+        </form>
+
+        <script>
+        jQuery( document ).ready(function() {
+            jQuery_2('.datepicker').datetimepicker({
+                format:'Y-m-d H:i'
+            });
+            jQuery(function()
+            {
+                jQuery_1('#agendaEditor').redactor({
+                    autoresize: false, air: false
+                });
+                jQuery_1('#socialEditor').redactor({
+                    autoresize: false, air: false
+                });
+            });
+        });
+        </script>
+    </div>
+
+    <div id="sidebar">{{> "sidebar"}}</div>
+
+</main>
