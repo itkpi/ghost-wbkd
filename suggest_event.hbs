@@ -38,7 +38,9 @@
 
 
 <main id="content" class="content clearfix" role="main">
-
+    <p>
+        {{error}}
+    </p>
     <div id="articles">
         <form class="grid-form" method="POST">
             <div class="grid-10 gutter-20">
@@ -91,10 +93,6 @@
                                 <label>Print time<br />(only date will be printed if not checked)</label>
                                 <input type="checkbox" name="include_time" value="true" {{# unless only_date }}checked{{/unless}}>
                             </div>
-                            <div data-field-span="1">
-                                <label>Special</label>
-                                <input type="checkbox" name="special" {{# if special }}checked{{/if}}>
-                            </div>
                         </div>
 
                         <div data-row-span="1">
@@ -121,6 +119,13 @@
                             <div data-field-span="1">
                                 <label>Image URL</label>
                                 <input type="text" name="image_url" value="{{image_url}}">
+                            </div>
+                        </div>
+
+                        <div data-row-span="1">
+                            <div data-field-span="1">
+                                <label>Submitter e-mail</label>
+                                <input type="text" name="submitter_email" value="{{submitter_email}}">
                             </div>
                         </div>
                     </fieldset>
