@@ -74,12 +74,6 @@
                                 <textarea rows="15" name="agenda" id="agendaEditor">{{#if agenda }}{{agenda}}{{/if}}</textarea>
                             </div>
                         </div>
-                        <div data-row-span="1">
-                            <div data-field-span="1">
-                                <label>Social</label>
-                                <textarea rows="5" name="social" id="socialEditor">{{#if social }}{{social}}{{/if}}</textarea>
-                            </div>
-                        </div>
                     </fieldset>
                 </div>
                 <div class="span-4">
@@ -92,17 +86,15 @@
                             </div>
                         </div>
 
-                        <div data-row-span="2">
+                        <div data-row-span="3">
                             <div data-field-span="1">
                                 <label>Starts at</label>
-                                <input type="text" class="datepicker" name="when_start" value="{{# if when_start }}{{# unless only_date }}{{ when_start }}{{ else }}{{ when_start }}{{/unless}}{{/if}}">
+                                <input type="text" class="datepicker" name="when_start" value="{{# if when_start }}{{ when_start }}{{/if}}">
                             </div>
                             <div data-field-span="1">
                                 <label>Ends at</label>
-                                <input type="text" class="datepicker" name="when_end" value="{{# if when_end }}{{# unless only_date }}{{ when_end }}{{ else }}{{ when_end }}{{/unless}}{{/if}}">
+                                <input type="text" class="datepicker" name="when_end" value="{{# if when_end }}{{ when_end }}{{/if}}">
                             </div>
-                        </div>
-                        <div data-row-span="2">
                             <div data-field-span="1">
                                 <label>Print time<br />(only date will be printed if not checked)</label>
                                 <input type="checkbox" name="include_time" value="true" {{# unless only_date }}checked{{/unless}}>
