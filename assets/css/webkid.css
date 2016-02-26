@@ -436,7 +436,7 @@ a.article-link:visited {
   width: 100%;
 }
 
-A.event-register {
+A.event-register, .big-ok-button {
   text-decoration: none;
   opacity: 10;
   padding: 0.8em;

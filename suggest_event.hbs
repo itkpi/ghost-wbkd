@@ -38,9 +38,28 @@
 
 
 <main id="content" class="content clearfix" role="main">
-    <p>
-        {{error}}
-    </p>
+    {{# if edit }}
+        <div style="margin: 5px; border: 2px solid green; padding: 5px;">
+            <b>Івент надіслано до ІТ КПІ! Дякуємо!</b><br>
+            При необхідності, ви все ще можете відредагувати івент за <a href="{{edit}}">цим посиланням</a>, допоки івент не прийнятий до публікації в дайджесті.
+            <ul>
+            {{#each error}}
+                <li><i>{{key}}</i>: {{error}}</li>
+            {{/each}}
+            </ul>
+        </div>
+    {{/if}}
+
+    {{#if error}}
+        <div style="margin: 5px; border: 2px solid red; padding: 5px;">
+            Виникло декілька проблем при заповненні форми:
+            <ul>
+            {{#each error}}
+                <li><i>{{key}}</i>: {{error}}</li>
+            {{/each}}
+            </ul>
+        </div>
+    {{/if}}
     <div id="articles">
         <form class="grid-form" method="POST">
             <div class="grid-10 gutter-20">
@@ -133,10 +152,9 @@
             </div>
             <br>
             {{# if edit }}
-            <button type="submit" class="button-green bigger" name="submit" value="Edit">Save</button>
-            <button type="submit" class="button-green bigger" name="submit" value="Edit_add_more">Save and add one more</button>
+            <button type="submit" class="big-ok-button" name="submit" value="Edit">Save</button>
             {{ else }}
-            <button type="submit" class="button-green bigger" name="submit" value="save_details">Save and preview</button>
+            <button type="submit" class="big-ok-button" name="submit" value="save_details">Send</button>
             {{/if}}
         </form>
 
