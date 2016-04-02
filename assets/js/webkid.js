@@ -1,6 +1,8 @@
 function setColorsFilter() {
-  //April 1, hello world!
-  invertedPercent = "100%";
+  var invertedPercent = Cookies.get("invertColors");
+  if (invertedPercent === undefined) {
+    invertedPercent = "0%";
+  }
   ["body", "img", ".partner", ".post-image"].forEach(function(sel) {
     $(sel).css("filter", "invert(" + invertedPercent + ")");
     $(sel).css("-webkit-filter", "invert(" + invertedPercent + ")");
@@ -11,7 +13,10 @@ function setColorsFilter() {
 }
 
 function invert() {
-  //April 1, hello world!
+  var inverted = Cookies.get("invertColors");
+  if (inverted == "0%") inverted = "100%"
+  else inverted = "0%";
+  Cookies.set("invertColors", inverted);
   setColorsFilter();
 }
 
