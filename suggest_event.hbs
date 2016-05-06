@@ -87,7 +87,15 @@
                         <div data-row-span="1">
                             <div data-field-span="1">
                                 <label>Agenda</label>
-                                <textarea rows="15" name="agenda" id="agendaEditor">{{#if agenda }}{{agenda}}{{/if}}</textarea>
+                                <textarea rows="15" name="agenda" id="agendaEditor">
+                                    {{#if agenda }}{{agenda}}
+                                    {{else}}
+                                        <br>
+                                        <b>Програма:</b><ul><li></li></ul>
+                                        <b>Спікери:</b><ul><li></li></ul>
+                                        <br>
+                                    {{/if}}
+                                </textarea>
                             </div>
                         </div>
                     </fieldset>
